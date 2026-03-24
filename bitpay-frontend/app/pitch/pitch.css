@@ -1,0 +1,19 @@
+/* Hide navbar and footer on pitch page */
+.pitch-layout header,
+.pitch-layout footer,
+.pitch-layout nav {
+  display: none !important;
+}
+
+/* Ensure full viewport height */
+.pitch-layout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Remove any default margins/padding */
+.pitch-layout body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
