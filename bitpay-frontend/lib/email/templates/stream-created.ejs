@@ -1,0 +1,63 @@
+<h1 class="email-title">💰 New Payment Stream Received!</h1>
+
+<p class="email-text">
+    Great news! You've received a new payment stream. Funds will be automatically vested over time and available for withdrawal.
+</p>
+
+<div class="success-box">
+    <div class="success-box-title">Stream Active</div>
+    <p class="email-text" style="margin-bottom: 0;">
+        Your stream is now active and vesting. You can withdraw available funds anytime from your dashboard.
+    </p>
+</div>
+
+<div class="info-box">
+    <div class="info-box-title">Stream Details</div>
+    
+    <div class="info-row">
+        <span class="info-label">Stream ID:</span>
+        <span class="info-value">#<%= streamId %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">From:</span>
+        <span class="info-value"><%= senderAddress.substring(0, 8) %>...<%= senderAddress.substring(senderAddress.length - 6) %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">To:</span>
+        <span class="info-value"><%= recipientAddress.substring(0, 8) %>...<%= recipientAddress.substring(recipientAddress.length - 6) %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Total Amount:</span>
+        <span class="info-value"><%= amount %> sBTC</span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Start Block:</span>
+        <span class="info-value"><%= startBlock %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">End Block:</span>
+        <span class="info-value"><%= endBlock %></span>
+    </div>
+</div>
+
+<div class="button-container">
+    <a href="<%= dashboardUrl %>" class="button">
+        View Stream →
+    </a>
+</div>
+
+<p class="email-text" style="text-align: center; margin-top: 20px;">
+    <a href="https://explorer.hiro.so/txid/<%= txHash %>?chain=testnet" class="transaction-link">
+        View transaction on explorer →
+    </a>
+</p>
+
+<p class="email-text" style="font-size: 14px; color: #718096; margin-top: 30px;">
+    <strong>What happens next?</strong><br>
+    Your stream will vest linearly from block <%= startBlock %> to block <%= endBlock %>. You can withdraw any vested amount at any time. The remaining unvested amount will continue to vest according to the schedule.
+</p>
