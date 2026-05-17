@@ -1,0 +1,62 @@
+<h1 class="email-title">🏦 New Withdrawal Proposal</h1>
+
+<p class="email-text">
+    A new withdrawal proposal has been submitted and requires your approval. As a treasury admin, your vote is needed.
+</p>
+
+<div class="info-box">
+    <div class="info-box-title">Proposal Details</div>
+    
+    <div class="info-row">
+        <span class="info-label">Proposal ID:</span>
+        <span class="info-value">#<%= proposalId %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Amount:</span>
+        <span class="info-value"><strong><%= amount %> sBTC</strong></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Recipient:</span>
+        <span class="info-value"><%= recipient.substring(0, 8) %>...<%= recipient.substring(recipient.length - 6) %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Proposed By:</span>
+        <span class="info-value"><%= proposedBy.substring(0, 8) %>...<%= proposedBy.substring(proposedBy.length - 6) %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Current Approvals:</span>
+        <span class="info-value"><%= currentApprovals %> of <%= requiredApprovals %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Timelock Expires:</span>
+        <span class="info-value"><%= timelockExpires %></span>
+    </div>
+</div>
+
+<div class="alert-box">
+    <div class="alert-box-title">Action Required</div>
+    <p class="email-text" style="margin-bottom: 0;">
+        This proposal needs <%= requiredApprovals - currentApprovals %> more approval(s) to be executed. Please review and vote in the dashboard.
+    </p>
+</div>
+
+<div class="button-container">
+    <a href="<%= dashboardUrl %>" class="button">
+        Review & Vote →
+    </a>
+</div>
+
+<p class="email-text" style="text-align: center; margin-top: 20px;">
+    <a href="https://explorer.hiro.so/txid/<%= txHash %>?chain=testnet" class="transaction-link">
+        View proposal transaction →
+    </a>
+</p>
+
+<p class="email-text" style="font-size: 14px; color: #718096; margin-top: 30px;">
+    <strong>Important:</strong> Proposals must be approved by <%= requiredApprovals %> admins and wait for the timelock period to expire before execution. Review carefully before approving.
+</p>
