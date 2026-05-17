@@ -1,0 +1,66 @@
+<h1 class="email-title">🎉 Purchase Completed!</h1>
+
+<p class="email-text">
+    Congratulations! Your purchase has been completed successfully. You are now the owner of payment stream #<%= streamId %>.
+</p>
+
+<div class="success-box">
+    <div class="success-box-title">Purchase Successful</div>
+    <p class="email-text" style="margin-bottom: 0;">
+        The obligation NFT has been transferred to your wallet. You can now manage this stream and receive future payments.
+    </p>
+</div>
+
+<div class="info-box">
+    <div class="info-box-title">Purchase Details</div>
+    
+    <div class="info-row">
+        <span class="info-label">Stream ID:</span>
+        <span class="info-value">#<%= streamId %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Purchase Price:</span>
+        <span class="info-value"><%= price %> sBTC</span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Marketplace Fee:</span>
+        <span class="info-value"><%= marketplaceFee %> sBTC</span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Total Paid:</span>
+        <span class="info-value"><strong><%= (parseFloat(price) + parseFloat(marketplaceFee)).toFixed(8) %> sBTC</strong></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">From Seller:</span>
+        <span class="info-value"><%= sellerAddress.substring(0, 8) %>...<%= sellerAddress.substring(sellerAddress.length - 6) %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Sale ID:</span>
+        <span class="info-value">#<%= saleId %></span>
+    </div>
+</div>
+
+<div class="button-container">
+    <a href="<%= dashboardUrl %>" class="button">
+        View Your Stream →
+    </a>
+</div>
+
+<p class="email-text" style="text-align: center; margin-top: 20px;">
+    <a href="https://explorer.hiro.so/txid/<%= txHash %>?chain=testnet" class="transaction-link">
+        View transaction on explorer →
+    </a>
+</p>
+
+<p class="email-text" style="font-size: 14px; color: #718096; margin-top: 30px;">
+    <strong>What you can do now:</strong><br>
+    • View and manage your stream in the dashboard<br>
+    • Withdraw vested funds at any time<br>
+    • Transfer or sell the stream on the marketplace<br>
+    • Cancel the stream if needed (fees apply)
+</p>
