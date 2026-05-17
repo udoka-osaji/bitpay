@@ -1,0 +1,62 @@
+<h1 class="email-title">💸 Your Stream Has Been Sold!</h1>
+
+<p class="email-text">
+    Great news! Your payment stream #<%= streamId %> has been sold on the BitPay marketplace. Funds have been transferred to your wallet.
+</p>
+
+<div class="success-box">
+    <div class="success-box-title">Sale Completed</div>
+    <p class="email-text" style="margin-bottom: 0;">
+        The obligation NFT has been transferred to the buyer, and you've received payment.
+    </p>
+</div>
+
+<div class="info-box">
+    <div class="info-box-title">Sale Details</div>
+    
+    <div class="info-row">
+        <span class="info-label">Stream ID:</span>
+        <span class="info-value">#<%= streamId %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Sale Price:</span>
+        <span class="info-value"><%= price %> sBTC</span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Marketplace Fee:</span>
+        <span class="info-value">-<%= marketplaceFee %> sBTC (1%)</span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">You Received:</span>
+        <span class="info-value"><strong><%= netAmount %> sBTC</strong></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Buyer:</span>
+        <span class="info-value"><%= buyerAddress.substring(0, 8) %>...<%= buyerAddress.substring(buyerAddress.length - 6) %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Sale ID:</span>
+        <span class="info-value">#<%= saleId %></span>
+    </div>
+</div>
+
+<div class="button-container">
+    <a href="<%= dashboardUrl %>" class="button">
+        View Sale History →
+    </a>
+</div>
+
+<p class="email-text" style="text-align: center; margin-top: 20px;">
+    <a href="https://explorer.hiro.so/txid/<%= txHash %>?chain=testnet" class="transaction-link">
+        View transaction on explorer →
+    </a>
+</p>
+
+<p class="email-text" style="font-size: 14px; color: #718096; margin-top: 30px;">
+    Thank you for using the BitPay marketplace! Want to sell more streams? List them on the marketplace anytime.
+</p>
