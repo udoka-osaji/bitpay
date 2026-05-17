@@ -1,0 +1,48 @@
+<h1 class="email-title">✅ Withdrawal Successful</h1>
+
+<p class="email-text">
+    Your withdrawal from stream #<%= streamId %> has been processed successfully. The funds have been transferred to your wallet.
+</p>
+
+<div class="success-box">
+    <div class="success-box-title">Withdrawal Completed</div>
+    <div class="info-row">
+        <span class="info-label">Amount Withdrawn:</span>
+        <span class="info-value"><%= amount %> sBTC</span>
+    </div>
+</div>
+
+<div class="info-box">
+    <div class="info-box-title">Stream Status</div>
+    
+    <div class="info-row">
+        <span class="info-label">Stream ID:</span>
+        <span class="info-value">#<%= streamId %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Withdrawn:</span>
+        <span class="info-value"><%= amount %> sBTC</span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Remaining:</span>
+        <span class="info-value"><%= remainingAmount %> sBTC</span>
+    </div>
+</div>
+
+<div class="button-container">
+    <a href="<%= dashboardUrl %>" class="button">
+        View Stream Details →
+    </a>
+</div>
+
+<p class="email-text" style="text-align: center; margin-top: 20px;">
+    <a href="https://explorer.hiro.so/txid/<%= txHash %>?chain=testnet" class="transaction-link">
+        View transaction on explorer →
+    </a>
+</p>
+
+<p class="email-text" style="font-size: 14px; color: #718096; margin-top: 30px;">
+    You can withdraw additional vested funds at any time from your dashboard.
+</p>
