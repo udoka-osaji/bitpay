@@ -1,0 +1,52 @@
+<h1 class="email-title">⚠️ Stream Cancelled</h1>
+
+<p class="email-text">
+    The payment stream #<%= streamId %> has been cancelled by the sender. All vested funds have been paid out, and unvested funds have been returned.
+</p>
+
+<div class="alert-box">
+    <div class="alert-box-title">Stream Cancelled</div>
+    <p class="email-text" style="margin-bottom: 0;">
+        This stream is no longer active. You will not receive additional payments from this stream.
+    </p>
+</div>
+
+<div class="info-box">
+    <div class="info-box-title">Cancellation Details</div>
+    
+    <div class="info-row">
+        <span class="info-label">Stream ID:</span>
+        <span class="info-value">#<%= streamId %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Vested Paid:</span>
+        <span class="info-value"><%= vestedPaid %> sBTC</span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Unvested Returned:</span>
+        <span class="info-value"><%= unvestedReturned %> sBTC</span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Cancelled By:</span>
+        <span class="info-value"><%= senderAddress.substring(0, 8) %>...<%= senderAddress.substring(senderAddress.length - 6) %></span>
+    </div>
+</div>
+
+<div class="button-container">
+    <a href="<%= dashboardUrl %>" class="button">
+        View Stream History →
+    </a>
+</div>
+
+<p class="email-text" style="text-align: center; margin-top: 20px;">
+    <a href="https://explorer.hiro.so/txid/<%= txHash %>?chain=testnet" class="transaction-link">
+        View transaction on explorer →
+    </a>
+</p>
+
+<p class="email-text" style="font-size: 14px; color: #718096; margin-top: 30px;">
+    If you have questions about this cancellation, please contact the sender directly.
+</p>
