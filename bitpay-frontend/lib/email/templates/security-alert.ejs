@@ -1,0 +1,45 @@
+<h1 class="email-title">🚨 Security Alert</h1>
+
+<p class="email-text">
+    <strong>Important:</strong> We've detected activity on your BitPay account that requires your attention.
+</p>
+
+<div class="alert-box">
+    <div class="alert-box-title"><%= alertType %></div>
+    <p class="email-text" style="margin-bottom: 0;">
+        <%= alertMessage %>
+    </p>
+</div>
+
+<div class="info-box">
+    <div class="info-box-title">Alert Details</div>
+    
+    <div class="info-row">
+        <span class="info-label">Time:</span>
+        <span class="info-value"><%= timestamp %></span>
+    </div>
+    
+    <div class="info-row">
+        <span class="info-label">Action Detected:</span>
+        <span class="info-value"><%= action %></span>
+    </div>
+</div>
+
+<div class="button-container">
+    <a href="<%= dashboardUrl %>" class="button">
+        Review Security Settings →
+    </a>
+</div>
+
+<p class="email-text" style="font-size: 14px; color: #718096; margin-top: 30px;">
+    <strong>Was this you?</strong><br>
+    If you recognize this activity, no action is needed. If you don't recognize this activity, please secure your account immediately and contact support.
+</p>
+
+<p class="email-text" style="font-size: 14px; color: #718096;">
+    <strong>Security Tips:</strong><br>
+    • Never share your private keys or seed phrases<br>
+    • Enable additional security measures in your wallet<br>
+    • Review authorized contracts regularly<br>
+    • Be cautious of phishing attempts
+</p>
