@@ -108,3 +108,4 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
         body: JSON.stringify(payload),
       });
       
+      const data = await response.json();
