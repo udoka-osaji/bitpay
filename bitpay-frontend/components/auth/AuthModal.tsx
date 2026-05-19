@@ -176,3 +176,15 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
               onClick={() => handleWalletAuth(type)}
               disabled={isLoading || isWalletLoading}
             >
+              {isWalletLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Connecting Wallet...
+                </>
+              ) : (
+                <>
+                  <Wallet className="mr-2 h-4 w-4" />
+                  {type === 'login' ? 'Login with Stacks Wallet' : 'Sign up with Stacks Wallet'}
+                </>
+              )}
+            </Button>
