@@ -94,4 +94,7 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
           return;
         }
       }
+
+      const endpoint = type === 'login' ? '/api/auth/login' : '/api/auth/register';
+      const payload = type === 'login' 
       
