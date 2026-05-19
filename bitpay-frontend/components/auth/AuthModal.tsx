@@ -193,3 +193,8 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
               Connect your Stacks wallet for secure Bitcoin streaming authentication
             </div>
           </div>
+
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <Separator className="w-full" />
+            </div>
