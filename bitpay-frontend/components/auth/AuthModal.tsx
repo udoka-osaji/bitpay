@@ -296,3 +296,9 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
                 </div>
               </div>
             )}
+
+            <Button
+              type="submit"
+              className="w-full bg-brand-pink hover:bg-brand-pink/90 text-white"
+              disabled={isLoading || isWalletLoading}
+            >
