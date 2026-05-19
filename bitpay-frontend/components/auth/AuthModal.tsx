@@ -35,10 +35,10 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
 
   const handleWalletAuth = async (authType: 'login' | 'signup') => {
     setIsWalletLoading(true);
-
+    
     try {
       let result;
-
+      
       if (authType === 'signup') {
         // Register with wallet
         result = await walletService.registerWithWallet();
@@ -52,15 +52,15 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
       if (result.success) {
         // Refresh auth state from cookies
         await refreshUser();
-
+        
         // Call auth success callback to refresh header
         if (onAuthSuccess) {
           onAuthSuccess();
         }
-
+        
         onSuccess();
         onClose();
-
+        
         // Navigate to dashboard after auth state is refreshed
         setTimeout(() => {
           window.location.href = '/dashboard';
@@ -107,20 +107,23 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
         },
         body: JSON.stringify(payload),
       });
-      
+
       const data = await response.json();
 
       if (response.ok) {
         toast.success(type === 'login' ? 'Welcome back to BitPay!' : 'BitPay account created successfully!');
-
+        
         // Refresh auth state from cookies
         await refreshUser();
-
+        
         // Call auth success callback to refresh header
         if (onAuthSuccess) {
           onAuthSuccess();
         }
-
+        
+        onSuccess();
+        onClose();
+        
         // Navigate to dashboard after auth state is refreshed
         setTimeout(() => {
           window.location.href = '/dashboard';
@@ -188,7 +191,7 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
                 </>
               )}
             </Button>
-
+            
             <div className="text-xs text-muted-foreground text-center">
               Connect your Stacks wallet for secure Bitcoin streaming authentication
             </div>
@@ -329,3 +332,23 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
                 Sign up
               </Button>
             </>
+          ) : (
+            <>
+              Already have an account?{' '}
+              <Button
+                variant="link"
+                className="p-0 h-auto font-normal text-brand-pink hover:text-brand-pink/80"
+                onClick={() => {
+                  // Switch to login - parent component should handle this
+                }}
+                disabled={isLoading || isWalletLoading}
+              >
+                Sign in
+              </Button>
+            </>
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
