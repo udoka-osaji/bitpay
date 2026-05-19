@@ -11,3 +11,11 @@ import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/use-auth";
 import walletService from "@/lib/wallet/wallet-service";
+
+interface AuthModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  type: 'login' | 'signup';
+  onSuccess: () => void;
+  onAuthSuccess?: () => void;
+}
