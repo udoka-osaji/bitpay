@@ -160,3 +160,10 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
             {type === 'login' ? 'Welcome Back to BitPay' : 'Join BitPay'}
           </DialogTitle>
         </DialogHeader>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="space-y-4 mt-4"
+        >
