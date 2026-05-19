@@ -112,3 +112,6 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
 
       if (response.ok) {
         toast.success(type === 'login' ? 'Welcome back to BitPay!' : 'BitPay account created successfully!');
+
+        // Refresh auth state from cookies
+        await refreshUser();
