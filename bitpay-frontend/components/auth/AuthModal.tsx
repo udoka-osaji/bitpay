@@ -313,3 +313,19 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
             </Button>
           </form>
         </motion.div>
+
+        <div className="text-center text-sm text-muted-foreground">
+          {type === 'login' ? (
+            <>
+              Don't have an account?{' '}
+              <Button
+                variant="link"
+                className="p-0 h-auto font-normal text-brand-pink hover:text-brand-pink/80"
+                onClick={() => {
+                  // Switch to signup - parent component should handle this
+                }}
+                disabled={isLoading || isWalletLoading}
+              >
+                Sign up
+              </Button>
+            </>
