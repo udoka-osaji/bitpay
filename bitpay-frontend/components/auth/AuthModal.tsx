@@ -142,3 +142,7 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
       password: '',
       confirmPassword: ''
     });
+    setShowPassword(false);
+    setShowConfirmPassword(false);
+    setIsWalletLoading(false);
+  };
