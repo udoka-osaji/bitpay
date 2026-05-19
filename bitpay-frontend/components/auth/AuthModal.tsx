@@ -302,3 +302,14 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
               className="w-full bg-brand-pink hover:bg-brand-pink/90 text-white"
               disabled={isLoading || isWalletLoading}
             >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  {type === 'login' ? 'Signing In...' : 'Creating Account...'}
+                </>
+              ) : (
+                type === 'login' ? 'Sign In' : 'Create Account'
+              )}
+            </Button>
+          </form>
+        </motion.div>
