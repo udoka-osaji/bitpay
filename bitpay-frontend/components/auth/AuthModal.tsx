@@ -188,3 +188,8 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
                 </>
               )}
             </Button>
+
+            <div className="text-xs text-muted-foreground text-center">
+              Connect your Stacks wallet for secure Bitcoin streaming authentication
+            </div>
+          </div>
