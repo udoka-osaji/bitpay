@@ -44,3 +44,7 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
         result = await walletService.registerWithWallet();
         toast.success('Welcome to BitPay! Registration successful.');
       } else {
+        // Login with wallet
+        result = await walletService.loginWithWallet();
+        toast.success('Welcome back to BitPay!');
+      }
