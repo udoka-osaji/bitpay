@@ -234,3 +234,17 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
                 disabled={isLoading || isWalletLoading}
               />
             </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="password">Password</Label>
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter your password"
+                  value={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  required
+                  disabled={isLoading || isWalletLoading}
+                  className="pr-10"
+                />
