@@ -125,3 +125,6 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
         setTimeout(() => {
           window.location.href = '/dashboard';
         }, 100);
+      } else {
+        toast.error(data.error || 'Something went wrong');
+      }
