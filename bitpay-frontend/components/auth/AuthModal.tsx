@@ -204,3 +204,20 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
               </span>
             </div>
           </div>
+
+          {/* Email/Password Form */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {type === 'signup' && (
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="Enter your full name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
+                  disabled={isLoading || isWalletLoading}
+                />
+              </div>
+            )}
