@@ -279,3 +279,11 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
                     disabled={isLoading || isWalletLoading}
                     className="pr-10"
                   />
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    disabled={isLoading || isWalletLoading}
+                  >
