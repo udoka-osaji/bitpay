@@ -264,3 +264,18 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
                 </Button>
               </div>
             </div>
+
+            {type === 'signup' && (
+              <div className="space-y-2">
+                <Label htmlFor="confirmPassword">Confirm Password</Label>
+                <div className="relative">
+                  <Input
+                    id="confirmPassword"
+                    type={showConfirmPassword ? "text" : "password"}
+                    placeholder="Confirm your password"
+                    value={formData.confirmPassword}
+                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                    required
+                    disabled={isLoading || isWalletLoading}
+                    className="pr-10"
+                  />
