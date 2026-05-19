@@ -97,4 +97,6 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
 
       const endpoint = type === 'login' ? '/api/auth/login' : '/api/auth/register';
       const payload = type === 'login' 
+        ? { email: formData.email, password: formData.password }
+        : { name: formData.name, email: formData.email, password: formData.password };
       
