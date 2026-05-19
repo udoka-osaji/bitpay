@@ -35,3 +35,6 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
 
   const handleWalletAuth = async (authType: 'login' | 'signup') => {
     setIsWalletLoading(true);
+
+    try {
+      let result;
