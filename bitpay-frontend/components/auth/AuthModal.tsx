@@ -19,3 +19,11 @@ interface AuthModalProps {
   onSuccess: () => void;
   onAuthSuccess?: () => void;
 }
+
+export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: AuthModalProps) {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
