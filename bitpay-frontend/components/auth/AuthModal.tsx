@@ -75,4 +75,8 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
       setIsWalletLoading(false);
     }
   };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
       
