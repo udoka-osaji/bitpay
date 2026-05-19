@@ -167,3 +167,12 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
           transition={{ duration: 0.3 }}
           className="space-y-4 mt-4"
         >
+          {/* Wallet Authentication Section */}
+          <div className="space-y-3">
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full border-2 border-brand-pink text-muted-foreground hover:bg-brand-pink hover:text-white transition-colors"
+              onClick={() => handleWalletAuth(type)}
+              disabled={isLoading || isWalletLoading}
+            >
