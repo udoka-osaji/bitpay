@@ -87,4 +87,11 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
           setIsLoading(false);
           return;
         }
+
+        if (formData.password.length < 8) {
+          toast.error('Password must be at least 8 characters long');
+          setIsLoading(false);
+          return;
+        }
+      }
       
