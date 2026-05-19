@@ -72,4 +72,7 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
       console.error('Wallet authentication error:', error);
       toast.error(error.message || 'Failed to connect wallet');
     } finally {
+      setIsWalletLoading(false);
+    }
+  };
       
