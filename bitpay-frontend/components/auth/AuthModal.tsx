@@ -287,3 +287,12 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     disabled={isLoading || isWalletLoading}
                   >
+                    {showConfirmPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
+                  </Button>
+                </div>
+              </div>
+            )}
