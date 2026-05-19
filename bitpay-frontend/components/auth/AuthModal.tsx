@@ -38,3 +38,9 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
 
     try {
       let result;
+
+      if (authType === 'signup') {
+        // Register with wallet
+        result = await walletService.registerWithWallet();
+        toast.success('Welcome to BitPay! Registration successful.');
+      } else {
