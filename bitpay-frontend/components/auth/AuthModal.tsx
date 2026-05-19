@@ -109,3 +109,6 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
       });
       
       const data = await response.json();
+
+      if (response.ok) {
+        toast.success(type === 'login' ? 'Welcome back to BitPay!' : 'BitPay account created successfully!');
