@@ -134,3 +134,11 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
 
     setIsLoading(false);
   };
+
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    });
