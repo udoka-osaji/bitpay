@@ -27,3 +27,8 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
     password: '',
     confirmPassword: ''
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isWalletLoading, setIsWalletLoading] = useState(false);
+  const { refreshUser } = useAuth();
