@@ -52,3 +52,8 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
       if (result.success) {
         // Refresh auth state from cookies
         await refreshUser();
+
+        // Call auth success callback to refresh header
+        if (onAuthSuccess) {
+          onAuthSuccess();
+        }
