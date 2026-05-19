@@ -66,3 +66,5 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
           window.location.href = '/dashboard';
         }, 100);
       } else {
+        toast.error(result.error || 'Wallet authentication failed');
+      }
