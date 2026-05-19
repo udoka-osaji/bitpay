@@ -99,4 +99,12 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
       const payload = type === 'login' 
         ? { email: formData.email, password: formData.password }
         : { name: formData.name, email: formData.email, password: formData.password };
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
       
