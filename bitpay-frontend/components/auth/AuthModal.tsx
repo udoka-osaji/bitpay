@@ -221,3 +221,16 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
                 />
               </div>
             )}
+
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                required
+                disabled={isLoading || isWalletLoading}
+              />
+            </div>
