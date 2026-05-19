@@ -131,3 +131,6 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
     } catch (error) {
       toast.error('Network error. Please try again.');
     }
+
+    setIsLoading(false);
+  };
