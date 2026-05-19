@@ -151,3 +151,12 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
     resetForm();
     onClose();
   };
+
+  return (
+    <Dialog open={isOpen} onOpenChange={handleClose}>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle className="text-2xl font-bold text-center">
+            {type === 'login' ? 'Welcome Back to BitPay' : 'Join BitPay'}
+          </DialogTitle>
+        </DialogHeader>
