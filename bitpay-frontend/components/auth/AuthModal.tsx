@@ -79,4 +79,12 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+
+    try {
+      if (type === 'signup') {
+        if (formData.password !== formData.confirmPassword) {
+          toast.error('Passwords do not match');
+          setIsLoading(false);
+          return;
+        }
       
