@@ -120,3 +120,8 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
         if (onAuthSuccess) {
           onAuthSuccess();
         }
+
+        // Navigate to dashboard after auth state is refreshed
+        setTimeout(() => {
+          window.location.href = '/dashboard';
+        }, 100);
