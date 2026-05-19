@@ -57,3 +57,6 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
         if (onAuthSuccess) {
           onAuthSuccess();
         }
+
+        onSuccess();
+        onClose();
