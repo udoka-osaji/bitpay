@@ -48,3 +48,7 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
         result = await walletService.loginWithWallet();
         toast.success('Welcome back to BitPay!');
       }
+
+      if (result.success) {
+        // Refresh auth state from cookies
+        await refreshUser();
