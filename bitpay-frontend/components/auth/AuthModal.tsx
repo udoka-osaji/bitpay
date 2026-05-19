@@ -146,3 +146,8 @@ export function AuthModal({ isOpen, onClose, type, onSuccess, onAuthSuccess }: A
     setShowConfirmPassword(false);
     setIsWalletLoading(false);
   };
+
+  const handleClose = () => {
+    resetForm();
+    onClose();
+  };
