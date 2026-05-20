@@ -24,3 +24,13 @@ export function TurnkeyLoginButton() {
   const authState = turnkeyContext.authState;
   const clientState = turnkeyContext.clientState;
   const currentWallet = (turnkeyContext as any).currentWallet || (turnkeyContext as any).wallet;
+
+  // Show loading state while client is initializing
+  if (clientState === ClientState.Loading) {
+    return (
+      <Button disabled variant="outline">
+        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+        Loading...
+      </Button>
+    );
+  }
