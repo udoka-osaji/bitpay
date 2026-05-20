@@ -92,3 +92,13 @@ export function TurnkeyLoginButton() {
             <Wallet className="h-4 w-4" />
             {truncatedAddress}
           </Button>
+          </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="w-56">
+          <DropdownMenuLabel>
+            <div className="flex flex-col space-y-1">
+              <p className="text-sm font-medium leading-none">Wallet</p>
+              <p className="text-xs leading-none text-muted-foreground font-mono">
+                {truncatedAddress}
+              </p>
+            </div>
+          </DropdownMenuLabel>
