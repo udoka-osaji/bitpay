@@ -34,3 +34,15 @@ export function TurnkeyLoginButton() {
       </Button>
     );
   }
+
+  // Show error state
+  if (clientState === ClientState.Error) {
+    return (
+      <Button
+        onClick={() => window.location.reload()}
+        variant="destructive"
+      >
+        Error - Click to Reload
+      </Button>
+    );
+  }
