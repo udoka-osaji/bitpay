@@ -58,7 +58,7 @@ export function TurnkeyLoginButton() {
       ? `${address.slice(0, 6)}...${address.slice(-4)}`
       : "Unknown";
 
-      const copyAddress = () => {
+    const copyAddress = () => {
       if (address) {
         navigator.clipboard.writeText(address);
         toast.success("Address copied to clipboard");
@@ -92,7 +92,7 @@ export function TurnkeyLoginButton() {
             <Wallet className="h-4 w-4" />
             {truncatedAddress}
           </Button>
-          </DropdownMenuTrigger>
+        </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-56">
           <DropdownMenuLabel>
             <div className="flex flex-col space-y-1">
@@ -126,4 +126,9 @@ export function TurnkeyLoginButton() {
     <Button
       onClick={() => handleLogin()}
       className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-    ></Button>
+    >
+      <Wallet className="h-4 w-4" />
+      Connect Wallet
+    </Button>
+  );
+}
