@@ -52,3 +52,8 @@ export function TurnkeyLoginButton() {
     const stacksAccount = currentWallet.accounts?.find(
       (acc: any) => acc.curve === "CURVE_SECP256K1"
     );
+
+    const address = stacksAccount?.address || currentWallet.accounts[0]?.address;
+    const truncatedAddress = address
+      ? `${address.slice(0, 6)}...${address.slice(-4)}`
+      : "Unknown";
