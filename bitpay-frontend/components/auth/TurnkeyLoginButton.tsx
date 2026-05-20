@@ -75,3 +75,9 @@ export function TurnkeyLoginButton() {
         window.open(explorerUrl, "_blank");
       }
     };
+
+    const handleLogout = async () => {
+      await logout();
+      toast.success("Logged out successfully");
+      router.push("/");
+    };
