@@ -57,3 +57,10 @@ export function TurnkeyLoginButton() {
     const truncatedAddress = address
       ? `${address.slice(0, 6)}...${address.slice(-4)}`
       : "Unknown";
+
+      const copyAddress = () => {
+      if (address) {
+        navigator.clipboard.writeText(address);
+        toast.success("Address copied to clipboard");
+      }
+    };
