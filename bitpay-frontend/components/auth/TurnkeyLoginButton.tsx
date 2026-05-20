@@ -120,3 +120,10 @@ export function TurnkeyLoginButton() {
       </DropdownMenu>
     );
   }
+
+  // Not authenticated - show connect button
+  return (
+    <Button
+      onClick={() => handleLogin()}
+      className="gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+    ></Button>
