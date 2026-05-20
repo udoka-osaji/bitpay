@@ -64,3 +64,14 @@ export function TurnkeyLoginButton() {
         toast.success("Address copied to clipboard");
       }
     };
+
+    const viewExplorer = () => {
+      if (address) {
+        const networkType = process.env.NEXT_PUBLIC_STACKS_NETWORK || "testnet";
+        const explorerUrl =
+          networkType === "mainnet"
+            ? `https://explorer.hiro.so/address/${address}?chain=mainnet`
+            : `https://explorer.hiro.so/address/${address}?chain=testnet`;
+        window.open(explorerUrl, "_blank");
+      }
+    };
