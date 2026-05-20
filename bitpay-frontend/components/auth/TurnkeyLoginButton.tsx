@@ -13,3 +13,7 @@ import { useTurnkey, AuthState, ClientState } from "@turnkey/react-wallet-kit";
 import { Wallet, Copy, ExternalLink, LogOut, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+
+export function TurnkeyLoginButton() {
+  const router = useRouter();
+  const turnkeyContext = useTurnkey();
