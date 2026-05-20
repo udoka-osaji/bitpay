@@ -102,3 +102,13 @@ export function TurnkeyLoginButton() {
               </p>
             </div>
           </DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem onClick={copyAddress} className="cursor-pointer">
+            <Copy className="mr-2 h-4 w-4" />
+            Copy Address
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={viewExplorer} className="cursor-pointer">
+            <ExternalLink className="mr-2 h-4 w-4" />
+            View in Explorer
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
