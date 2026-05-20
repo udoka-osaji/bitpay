@@ -17,3 +17,10 @@ import { useRouter } from "next/navigation";
 export function TurnkeyLoginButton() {
   const router = useRouter();
   const turnkeyContext = useTurnkey();
+
+  // Safely access Turnkey properties
+  const handleLogin = turnkeyContext.handleLogin;
+  const logout = (turnkeyContext as any).logout;
+  const authState = turnkeyContext.authState;
+  const clientState = turnkeyContext.clientState;
+  const currentWallet = (turnkeyContext as any).currentWallet || (turnkeyContext as any).wallet;
