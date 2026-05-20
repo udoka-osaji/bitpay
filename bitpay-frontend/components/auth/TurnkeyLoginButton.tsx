@@ -46,3 +46,9 @@ export function TurnkeyLoginButton() {
       </Button>
     );
   }
+
+  // If authenticated and wallet exists, show wallet info
+  if (authState === AuthState.Authenticated && currentWallet) {
+    const stacksAccount = currentWallet.accounts?.find(
+      (acc: any) => acc.curve === "CURVE_SECP256K1"
+    );
