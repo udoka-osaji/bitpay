@@ -81,3 +81,11 @@ export function TurnkeyLoginButton() {
       toast.success("Logged out successfully");
       router.push("/");
     };
+
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button
+            variant="outline"
+            className="gap-2 bg-gradient-to-r from-purple-600/10 to-pink-600/10 border-purple-600/20 hover:border-purple-600/40"
+          ></Button>
